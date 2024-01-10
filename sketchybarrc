@@ -18,7 +18,7 @@ ITEM_DIR="$CONFIG_DIR/items"
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
 sketchybar --bar height=37        \
-                 blur_radius=30   \
+                 blur_radius=5   \
                  position=top     \
                  sticky=off       \
                  padding_left=15  \
@@ -36,6 +36,7 @@ sketchybar --default icon.font="SF Pro:Semibold:15.0"  \
                      label.color=$WHITE               \
                      background.color=$ITEM_BG_COLOR \
                      background.corner_radius=5 \
+                     background.opacity=50 \
                      background.height=24 \
                      padding_left=5                        \
                      padding_right=5                       \
@@ -44,15 +45,16 @@ sketchybar --default icon.font="SF Pro:Semibold:15.0"  \
                      icon.padding_left=10                   \
                      icon.padding_right=4
 
+# --Left Side Items --
+source $ITEM_DIR/spaces.sh
+source $ITEM_DIR/front_app.sh
+
 # --Right Side Items --
 source $ITEM_DIR/calendar.sh
 source $ITEM_DIR/battery.sh
 source $ITEM_DIR/cpu.sh
+source $ITEM_DIR/media.sh
 
-sketchybar --add item calendar right \
-           --set calendar icon=􀉉 \
-                          update_freq=30 \
-                          script="$PLUGIN_DIR/calendar.sh"
 
 ##### Finalizing Setup #####
 # The below command is only needed at the end of the initial configuration to
