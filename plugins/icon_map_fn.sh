@@ -425,6 +425,9 @@ function icon_map() {
   "WhatsApp")
     icon_result=":whats_app:"
     ;;
+  "GitHub")
+    icon_result=":git_hub:"
+    ;;
   *)
     icon_result=":default:"
     ;;
